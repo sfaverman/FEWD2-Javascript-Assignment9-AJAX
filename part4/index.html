@@ -8,8 +8,30 @@
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-		// WRITE YOUR CODE HERE
-    </script>
+		// Load JSON data into a web page using jQuery .ajax() Shorthand methodWRITE YOUR CODE HERE
+		$(function() {
+
+			$.ajax({
+				type: "get",
+				url: "json.js",
+				beforeSend: function() {$("#result").html("Loading...");},
+				timeout: 10000,
+				error: function(xhr, status, error) {
+					alert("Error: " + xhr.status + " - " + error);
+				},
+				dataType: "json",
+				success: function(data) {
+					$("#result").html("");
+					$.each(data, function() {
+						$.each(this, function(key, value) {
+							$("#result").append('<strong>' + value.name + '<br>' + value.title + '<br></strong>' + value.bio + '<br><br>');
+							});
+					});
+
+			}});
+		});
+
+	</script>
 </head>
 
 <body>
