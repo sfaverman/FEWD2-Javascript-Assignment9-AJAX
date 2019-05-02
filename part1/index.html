@@ -8,7 +8,30 @@
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   	<script>
-		// WRITE YOUR CODE HERE
+		//When each link is clicked, the corresponding section within the solutions.html page should be loaded into the div tag uniquely identified as solution.
+		$(function() {
+			$("#vprospect").click(function() {
+				$("#solution").load("solutions.html #vprospect");
+			});
+		});
+		$(function() {
+			$("#vconvert").click(function() {
+				$("#solution").load("solutions.html #vconvert");
+			});
+		});
+		$(function() {
+			$("#vretain").click(function() {
+				$("#solution").load("solutions.html #vretain");
+			});
+		});
+		/* -- format of error handling --
+		 $("#div_content").load("gfg.txt", function(response,status, http){
+                    if(status == "success")
+                        alert("Content loaded successfully!");
+                    if(status == "error")
+                        alert("Error: " + http.status + ": "                                                       + http.statusText);
+                });
+         */
     </script>
 </head>
 
