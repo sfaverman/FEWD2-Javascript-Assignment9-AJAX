@@ -8,7 +8,20 @@
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-		// WRITE YOUR CODE HERE
+		// Load XML data into a web page using jQuery .get() Shorthand method
+		$(function() {
+			$.get("team.xml", function(data) {
+				$(data).find("management").children().each(function() {
+					$("#team").append(
+						"<strong>" + $(this).find("name").text() + "<br>" +
+						$(this).find("title").text() + "</strong><br>" +
+						$(this).find("bio").text() + "<br><br>"
+					);
+				});
+			});
+
+		});
+
     </script>
 </head>
 

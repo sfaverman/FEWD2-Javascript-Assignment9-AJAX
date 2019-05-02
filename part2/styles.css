@@ -23,3 +23,6 @@ nav ul li a:link,
 nav ul li a:visited,
 #content,
 footer				{display:block;}
+.bold {
+	font-weight: bold;
+}
