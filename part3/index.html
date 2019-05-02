@@ -8,7 +8,19 @@
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-		// WRITE YOUR CODE HERE
+
+		// Load JSON data into a web page using jQuery .getJSON() Shorthand method
+
+		$(function() {
+			 $.getJSON("json.js", function(data){
+				$.each(data, function() {
+					$.each(this, function(key, value) {
+						$("#result").append('<strong>' + value.name + '<br>' + value.title + '<br></strong>' + value.bio + '<br><br>');
+					});
+				});
+			});
+		});
+
     </script>
 </head>
 
